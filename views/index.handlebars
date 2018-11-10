@@ -8,11 +8,19 @@
   	<li>
   		<p><span class="label">ID:</span> {{this.id}}</p>
       <p><span class="label">Burger Name:</span> {{this.burger_name}}</p>
-	<button class="submit-burger" data-id="{{id}}" data-newsleep="{{burger_name}}">Submit</button>
-      <button data-id="{{this.id}}" class="delquote">Delete</button>
 
-      
+
+{{!-- DEVOUR BUTTON --}}
+	<button class="btn btn-primary devour-burger" type="submit" data-id="{{id}}" data-devourburger="{{burger_name}}">Devour it!</button>
+
+
+{{!-- SUBMIT BUTTON --}}
+	<button class="btn btn-primary submit-burger" type="submit" data-id="{{id}}" data-newburger="{{burger_name}}">Submit</button>
+
+{{!-- DELETE BUTTON --}}
+  <button data-id="{{this.id}}" class="delquote">Delete</button>    
   	</li>
+    
   {{/each}}
 </ul>
 
