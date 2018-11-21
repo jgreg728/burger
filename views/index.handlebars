@@ -5,22 +5,24 @@
 <!-- Pass in data from server.js -->
 <ul>
   {{#each burgers}}
-  	<li>
-  		<p><span class="label">ID:</span> {{this.id}}</p>
-      <p><span class="label">Burger Name:</span> {{this.burger_name}}</p>
+  <li data-id={{this.id}}>
+    <p><span class="label">ID:</span> {{this.id}}</p>
+    <p><span class="label">Burger Name:</span> {{this.burger_name}}</p>
 
+  </li>
+
+  {{/each}}
+
+
+</ul>
 
 {{!-- DEVOUR BUTTON --}}
-	<button class="btn btn-primary devour-burger" type="submit" data-id="{{id}}" data-devourburger="{{burger_name}}">Devour it!</button>
+<button class="btn btn-primary devour-burger" type="submit" data-id="{{id}}" data-devourburger="{{burger_name}}">Devour
+  it!</button>
 
 
 {{!-- SUBMIT BUTTON --}}
-	<button class="btn btn-primary submit-burger" type="submit" data-id="{{id}}" data-newburger="{{burger_name}}">Submit</button>
+<button class="btn btn-primary submit-burger" type="submit" data-id="{{id}}" data-newburger="{{burger_name}}">Submit</button>
 
 {{!-- DELETE BUTTON --}}
-  <button data-id="{{this.id}}" class="delquote">Delete</button>    
-  	</li>
-    
-  {{/each}}
-</ul>
-
+<button data-id="{{this.id}}" class="delburger">Delete</button>
