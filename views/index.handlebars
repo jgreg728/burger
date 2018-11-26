@@ -3,26 +3,22 @@
 <p>Choose your burger wisely...</p>
 
 <!-- Pass in data from server.js -->
-<ul>
-  {{#each burgers}}
-  <li data-id={{this.id}}>
-    <p><span class="label">ID:</span> {{this.id}}</p>
-    <p><span class="label">Burger Name:</span> {{this.burger_name}}</p>
+<h2></h2>
+<form class="create-form">
 
-  </li>
+  <div class="form-group">
+    <label for="ca">Burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
 
-  {{/each}}
-
-
-</ul>
+{{!-- SUBMIT BUTTON --}}
+  <button class="btn submit-burger" type="submit">Submit</button>
+</form>
 
 {{!-- DEVOUR BUTTON --}}
 <button class="btn btn-primary devour-burger" type="submit" data-id="{{id}}" data-devourburger="{{burger_name}}">Devour
   it!</button>
 
-
-{{!-- SUBMIT BUTTON --}}
-<button class="btn btn-primary submit-burger" type="submit" data-id="{{id}}" data-newburger="{{burger_name}}">Submit</button>
 
 {{!-- DELETE BUTTON --}}
 <button data-id="{{this.id}}" class="delburger">Delete</button>

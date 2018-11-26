@@ -13,3 +13,11 @@ p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #aa4040
 }
+
+.form-group {
+  text-align: center;
+}
+
+.btn {
+  margin-left: 50px;
+}
