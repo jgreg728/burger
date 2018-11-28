@@ -1,0 +1,25 @@
+{{!-- LIST BURGERS AS THEY ARE SUBMITTED --}}
+
+<div class="row">
+
+	<div class="col-sm-4"></div>
+
+	<div class="col-sm-4">
+		<li>
+			<span>{{burger_name}}</span>
+			{{#unless devoured}}
+			{{!-- EAT BUTTON --}}
+			<button class="devour-btn" data-name="{{burger_name}}" data-id="{{id}}">
+				EAT!
+			</button>
+			{{/unless}}
+			{{!-- THROW AWAY BUTTON --}}
+			<button class="delete-btn" data-name="{{burger_name}}" data-id="{{id}}">
+				Delete
+			</button>
+		</li>
+	</div>
+
+	<div class="col-sm-4"></div>
+
+</div>

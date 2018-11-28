@@ -2,9 +2,9 @@ const connection = require("../config/connection.js");
 
 // function to turn ?s to a string in mySQL
 function printQuestionMarks(num) {
-  const arr = [];
+  let arr = [];
 
-  for (const i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     arr.push("?");
   }
 
@@ -12,11 +12,11 @@ function printQuestionMarks(num) {
 }
 
 // function to convert obj values into mySQL syntax
-function objtoSql(ob) {
-  const arr = [];
+function objToSql(ob) {
+  let arr = [];
 
   // loop through keys and push the key value as a string INT arr
-  for (const key in ob) {
+  for (let key in ob) {
     let value = ob[key];
     // skip all hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
@@ -34,7 +34,7 @@ function objtoSql(ob) {
 // Object for all our SQL statement functions.
 const orm = {
   selectAll: function(tableInput, cb) {
-    const queryString = "SELECT * FROM " + tableInput + ";";
+    let queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -43,7 +43,7 @@ const orm = {
     });
   },
   insertOne: function(table, cols, vals, cb) {
-    const queryString = "INSERT INTO " + table;
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -65,7 +65,7 @@ const orm = {
   
   
   updateOne: function(table, objColVals, condition, cb) {
-    const queryString = "UPDATE " + table;
+    let queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -83,7 +83,7 @@ const orm = {
   },
 
   delete: function(table, condition, cb) {
-    const queryString = "DELETE FROM " + table;
+    let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 

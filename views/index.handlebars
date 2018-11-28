@@ -2,23 +2,43 @@
 
 <p>Choose your burger wisely...</p>
 
+<br>
+<br>
+<img src="assets/img/dennys-big-burger-bash.jpg" alt="Burgers In A Row" class="burgerImage">  
+<br>
+<br> 
+
 <!-- Pass in data from server.js -->
-<h2></h2>
 <form class="create-form">
 
   <div class="form-group">
     <label for="ca">Burger:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="newBurger" name="name">
+    {{!-- SUBMIT BUTTON --}}
+    <button class="btn submit-burger" type="submit">Submit</button>
   </div>
 
-{{!-- SUBMIT BUTTON --}}
-  <button class="btn submit-burger" type="submit">Submit</button>
+
 </form>
 
-{{!-- DEVOUR BUTTON --}}
-<button class="btn btn-primary devour-burger" type="submit" data-id="{{id}}" data-devourburger="{{burger_name}}">Devour
-  it!</button>
+{{!-- Render Burgers --}}
+<br><br>
 
 
-{{!-- DELETE BUTTON --}}
-<button data-id="{{this.id}}" class="delburger">Delete</button>
+<div class="row">
+
+  <div class="col-sm-4"></div>
+
+  <div class="col-sm-4 burgerList">
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{else}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+  </div>
+
+  <div class="col-sm-4"></div>
+
+</div>
