@@ -16,12 +16,17 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/burgers", function(req, res) {
+  burger.selectAll(function(data) {
+    res.json(data);
+  });
+});
+
 router.post("/api/burgers", function(req, res) {
   burger.create([
-    "burger_name", "devoured"
+    "burger_name",
   ], [
     req.body.burger_name, 
-    req.body.devoured
   ], 
   result => {
     // Send back the ID of the new quote
