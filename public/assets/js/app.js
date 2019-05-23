@@ -1,9 +1,7 @@
 $(document).on("ready", function(){
   
-  // TO DEVOUR BURGER
+  // TO EAT BURGER
   $(".devour-btn").on("click", function(){
-    console.log("click")
-
     let id = $(this).attr('data-id');
     let name = $(this).attr('data-name');
 
@@ -42,7 +40,7 @@ $(document).on("ready", function(){
     );
   });
 
-    // TO DEVOUR BURGER
+    // TO THROW AWAY BURGER
     $(".delete-btn").on("click", function(){
       console.log("click")
   
